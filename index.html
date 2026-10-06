@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Surprise For You ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FLOATING BACKGROUND
+===================================================== -->
+
+<div id="particles"></div>
+
+
+
+<!-- =====================================================
+     SCREEN 1 — MYSTERY
+===================================================== -->
+
+<section id="mysteryScreen" class="screen active">
+
+    <div class="mystery-content">
+
+        <div class="lock-icon">
+            🔐
+        </div>
+
+        <p class="tiny-text">
+            Something special is waiting for you...
+        </p>
+
+        <h1>
+            Are you ready?
+        </h1>
+
+        <p class="hint">
+            But first, prove that you're the right person.
+        </p>
+
+        <button
+            class="primary-btn"
+            onclick="showQuestion()"
+        >
+            Unlock the Surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 2 — SECRET QUESTION
+===================================================== -->
+
+<section id="questionScreen" class="screen">
+
+    <div class="question-card">
+
+        <div class="question-icon">
+            💭
+        </div>
+
+        <p class="tiny-text">
+            A little question...
+        </p>
+
+        <h2>
+            What is something that<br>
+            always makes you smile?
+        </h2>
+
+        <p class="question-hint">
+            Hint: You already know the answer 😉
+        </p>
+
+        <input
+            type="text"
+            id="answerInput"
+            placeholder="Type your answer..."
+            autocomplete="off"
+        >
+
+        <button
+            class="primary-btn"
+            onclick="checkAnswer()"
+        >
+            Unlock ❤️
+        </button>
+
+        <p id="wrongAnswer"></p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SCREEN 3 — ENVELOPE
+===================================================== -->
+
+<section id="envelopeScreen" class="screen">
+
+    <div class="envelope-wrapper">
+
+        <p class="tiny-text">
+            You made it...
+        </p>
+
+        <h2>
+            There's something inside.
+        </h2>
+
+        <div
+            class="envelope"
+            onclick="openEnvelope()"
+        >
+
+            <div class="envelope-back"></div>
+
+            <div class="letter-paper">
+
+                <span>
+                    💌
+                </span>
+
+            </div>
+
+            <div class="envelope-front"></div>
+
+            <div class="envelope-flap"></div>
+
+        </div>
+
+        <p class="click-text">
+            Tap the envelope
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<main id="mainWebsite" class="hidden">
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero-section">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="tiny-text">
+            Today is not just another day...
+        </p>
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+        <h2 id="friendName">
+            My Favorite Human ❤️
+        </h2>
+
+        <p class="hero-description">
+
+            Somewhere in this world,
+            a very special person was born.
+
+            And today,
+            this little website exists just for him.
+
+        </p>
+
+        <button
+            class="scroll-btn"
+            onclick="scrollToMemories()"
+        >
+            Begin the Journey ↓
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<section class="countdown-section">
+
+    <p class="section-label">
+        ⏳ A NEW YEAR OF YOUR LIFE
+    </p>
+
+    <h2>
+        Another year of memories begins...
+    </h2>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <strong id="days">00</strong>
+            <span>Days</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section
+    id="memories"
+    class="memories-section"
+>
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            📸 MEMORY LANE
+        </p>
+
+        <h2>
+            Some moments...
+        </h2>
+
+        <p>
+            Because some memories deserve their own little place.
+        </p>
+
+    </div>
+
+
+    <div class="memory-grid">
+
+
+        <div class="memory-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="1.jpg"
+                    alt="Memory 1"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <span>
+                    01
+                </span>
+
+                <p>
+                    Happy Birthday.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="memory-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="2.jpg"
+                    alt="Memory 2"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <span>
+                    02
+                </span>
+
+                <p>
+                    A simple moment,
+                    but somehow special.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="memory-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="3.jpg"
+                    alt="Memory 3"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <span>
+                    03
+                </span>
+
+                <p>
+                    Good times.
+                    Crazy memories.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="memory-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="4.jpg"
+                    alt="Memory 4"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <span>
+                    04
+                </span>
+
+                <p>
+                    A picture that
+                    says more than words.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="memory-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="5.jpg"
+                    alt="Memory 5"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <span>
+                    05
+                </span>
+
+                <p>
+                    More laughter.
+                    More memories.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="memory-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="6.png"
+                    alt="Memory 6"
+                >
+
+            </div>
+
+            <div class="memory-text">
+
+                <span>
+                    06
+                </span>
+
+                <p>
+                    And hopefully...
+                    many more to come.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PERSONAL LETTER
+===================================================== -->
+
+<section class="letter-section">
+
+    <div class="letter-container">
+
+        <div class="letter-icon">
+            💌
+        </div>
+
+        <p class="section-label">
+            A LETTER
+        </p>
+
+        <h2>
+            A few words for you
+        </h2>
+
+
+        <div class="letter">
+
+            <p>
+                Dear <span class="name-placeholder">you</span>,
+            </p>
+
+            <p>
+
+                I don't really know how to put everything
+                into a few words.
+
+                But I wanted to make something that
+                you could look at and remember
+                how many beautiful moments
+                life has given us.
+
+            </p>
+
+            <p>
+
+                We've laughed,
+                we've had crazy moments,
+                we've made memories,
+                and somehow all those little things
+                became something worth remembering.
+
+            </p>
+
+            <p>
+
+                So on your birthday,
+                I hope you know one thing:
+
+            </p>
+
+            <blockquote>
+
+                You deserve happiness,
+                peace,
+                success,
+                and all the beautiful things
+                life has to offer.
+
+            </blockquote>
+
+            <p>
+
+                Keep smiling.
+
+                Keep being yourself.
+
+                And don't ever forget
+                how special you are.
+
+            </p>
+
+            <p class="signature">
+
+                With lots of love ❤️<br>
+                — From someone who cares
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CAKE
+===================================================== -->
+
+<section class="cake-section">
+
+    <p class="section-label">
+        🎂 ONE LAST THING
+    </p>
+
+    <h2>
+        Make a wish
+    </h2>
+
+    <p class="cake-instruction">
+        Click all three candles.
+    </p>
+
+
+    <div class="cake">
+
+        <div
+            class="candle candle-one"
+            onclick="blowCandle(this)"
+        >
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <div
+            class="candle candle-two"
+            onclick="blowCandle(this)"
+        >
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <div
+            class="candle candle-three"
+            onclick="blowCandle(this)"
+        >
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <div class="cake-top"></div>
+
+        <div class="cake-body"></div>
+
+        <div class="cake-bottom"></div>
+
+    </div>
+
+
+    <p id="wishText">
+        Your wish is waiting... ✨
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final-section">
+
+    <div class="final-content">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <p class="section-label">
+            THAT'S IT...
+        </p>
+
+        <h2>
+            Happy Birthday!
+        </h2>
+
+        <p>
+
+            May your next chapter
+            be even more beautiful
+            than the last one.
+
+        </p>
+
+        <p>
+
+            Here's to more laughter,
+            more adventures,
+            and more unforgettable memories.
+
+        </p>
+
+
+        <button
+            class="celebrate-btn"
+            onclick="finalCelebration()"
+        >
+            🎉 Celebrate!
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    Made with ❤️ especially for you
+
+</footer>
+
+
+</main>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
